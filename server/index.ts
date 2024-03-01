@@ -49,9 +49,9 @@ app.use(
   session({
     autoCommit: true,
     createSessionStorage() {
-      if (!process.env.SESSION_SECRET) {
-        throw new Error("SESSION_SECRET is not defined");
-      }
+      // if (!process.env.SESSION_SECRET) {
+      //   throw new Error("SESSION_SECRET is not defined");
+      // }
 
       const sessionStorage = createCookieSessionStorage({
         cookie: {
@@ -59,7 +59,8 @@ app.use(
           httpOnly: true,
           path: "/",
           sameSite: "lax",
-          secrets: [process.env.SESSION_SECRET],
+          secrets: ["secret"],
+          // secrets: [process.env.SESSION_SECRET],
           secure: process.env.NODE_ENV === "production",
         },
       });
