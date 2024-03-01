@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import devServer, { defaultOptions } from "@hono/vite-dev-server";
 import esbuild from "esbuild";
+import * as process from "process";
 
 export default defineConfig({
   server: {
@@ -27,7 +28,7 @@ export default defineConfig({
             // The final file name
             outfile: "build/server/index.mjs",
             // Our server entry point
-            entryPoints: ["server/index.ts"],
+            entryPoints: [process.env.NODE_ENV === "production" ? "server/production.ts" : "server/index.ts"],
             // Dependencies that should not be bundled
             // We import the remix build from "../build/server/remix.js", so no need to bundle it again
             external: ["./build/server/*"],

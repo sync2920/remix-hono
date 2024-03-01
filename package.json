@@ -17,18 +17,17 @@
   "prettier": {},
   "dependencies": {
     "@hono/node-server": "^1.8.2",
-    "@remix-run/dev": "^2.8.0",
     "@remix-run/node": "^2.8.0",
     "@remix-run/react": "^2.8.0",
     "hono": "^4.0.8",
     "isbot": "^5.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "remix-hono": "^0.0.15",
-    "vite": "^5.1.4"
+    "remix-hono": "^0.0.15"
   },
   "devDependencies": {
     "@hono/vite-dev-server": "^0.8.1",
+    "@remix-run/dev": "^2.8.0",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
@@ -47,6 +46,7 @@
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3",
+    "vite": "^5.1.4",
     "vite-tsconfig-paths": "^4.3.1"
   },
   "engines": {
