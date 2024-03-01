@@ -11,7 +11,8 @@
     "start:docker": "run-s docker:*",
     "docker:build": "docker build -t remix-hono-vite .",
     "docker:run": "docker run --rm -d -p 8080:8080 --env-file .env remix-hono-vite",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "postbuild": "chmod +x bin/postbuild.sh && ./bin/postbuild.sh"
   },
   "prettier": {},
   "dependencies": {
