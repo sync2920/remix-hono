@@ -20,7 +20,7 @@ export default defineConfig({
     }),
     tsconfigPaths(),
     remix({
-      serverBuildFile: "remix.js",
+      serverBuildFile: "remix.mjs",
       buildEnd: async () => {
         await esbuild
           .build({
