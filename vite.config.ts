@@ -6,7 +6,9 @@ import esbuild from "esbuild";
 import * as process from "process";
 
 export default defineConfig({
-
+  define: {
+    "process.env.SESSION_SECRET": JSON.stringify(process.env.SESSION_SECRET),
+  },
   server: {
     port: 3000,
     https: {
