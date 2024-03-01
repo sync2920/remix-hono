@@ -25,7 +25,7 @@ export default defineConfig({
         await esbuild
           .build({
             // The final file name
-            outfile: "build/server/index.js",
+            outfile: "build/server/index.mjs",
             // Our server entry point
             entryPoints: ["server/index.ts"],
             // Dependencies that should not be bundled
