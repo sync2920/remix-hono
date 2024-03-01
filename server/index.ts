@@ -84,7 +84,7 @@ app.use(
 app.use(async (c, next) => {
   const build = (isProductionMode
     ? // eslint-disable-next-line import/no-unresolved -- this expected until you build the app
-      await import("../build/server/remix.js")
+      await import("../build/server/remix.mjs")
     : await importDevBuild()) as unknown as ServerBuild;
 
   return remix({
