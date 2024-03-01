@@ -15,7 +15,8 @@ import { importDevBuild } from "./dev/server.js";
 const mode =
   process.env.NODE_ENV === "test" ? "development" : process.env.NODE_ENV;
 
-const isProductionMode = mode === "production";
+const isProductionMode = true;
+// const isProductionMode = mode === "production";
 
 console.log(`Starting server in ${mode} mode`, process.env);
 
