@@ -11,5 +11,5 @@ cp -r ./build/client ./.amplify-hosting/static
 cp deploy-manifest.json ./.amplify-hosting/deploy-manifest.json
 
 npm ci --omit=dev
-npm install vite
+rm -rf ./node_modules/@cloudflare
 cp -r ./node_modules ./.amplify-hosting/compute/default/node_modules
