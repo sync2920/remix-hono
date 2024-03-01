@@ -17,7 +17,7 @@ const mode =
 
 const isProductionMode = mode === "production";
 
-console.log(`Starting server in ${mode} mode`);
+console.log(`Starting server in ${mode} mode`, process.env);
 
 const app = new Hono();
 
