@@ -6,6 +6,7 @@ import esbuild from "esbuild";
 import * as process from "process";
 
 export default defineConfig({
+
   server: {
     port: 3000,
     https: {
