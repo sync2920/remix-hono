@@ -10,7 +10,7 @@ export default defineConfig((env) => {
   console.log(currentEnv);
   return {
     define: {
-      "process.env.SESSION_SECRET": JSON.stringify(currentEnv.SESSION_SECRET),
+      "SESSION_SECRET": JSON.stringify(currentEnv.SESSION_SECRET),
     },
     server: {
       port: 3000,

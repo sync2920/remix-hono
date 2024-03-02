@@ -11,7 +11,7 @@ import { session } from "remix-hono/session";
 import { cache } from "server/middlewares";
 
 console.log(process.env);
-console.log(process.env.SESSION_SECRET);
+console.log(SESSION_SECRET);
 
 const app = new Hono();
 
@@ -78,7 +78,6 @@ app.use(async (c, next) => {
   // eslint-disable-next-line import/no-unresolved -- this expected until you build the app
   const build = await import("../build/server/remix.mjs");
 
-
   return remix({
     build,
     mode: "production",
@@ -99,9 +98,6 @@ serve(
   {
     ...app,
     port: Number(process.env.PORT) || 3000,
-  },
-  async (info) => {
-    console.log(`🚀 Server started on port ${info.port}`);
   }
 );
 
