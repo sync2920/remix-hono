@@ -9,7 +9,9 @@ import { logger } from "hono/logger";
 import { remix } from "remix-hono/handler";
 import { session } from "remix-hono/session";
 import { cache } from "server/middlewares";
+import { config } from "dotenv";
 
+config();
 console.log(process.env);
 
 const app = new Hono();
