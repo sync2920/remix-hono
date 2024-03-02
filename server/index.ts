@@ -15,8 +15,7 @@ import { importDevBuild } from "./dev/server.js";
 const mode =
   process.env.NODE_ENV === "test" ? "development" : process.env.NODE_ENV;
 
-const isProductionMode = true;
-// const isProductionMode = mode === "production";
+const isProductionMode = mode === "production";
 
 console.log(`Starting server in ${mode} mode`, process.env);
 
@@ -49,9 +48,9 @@ app.use(
   session({
     autoCommit: true,
     createSessionStorage() {
-      // if (!process.env.SESSION_SECRET) {
-      //   throw new Error("SESSION_SECRET is not defined");
-      // }
+      if (!process.env.SESSION_SECRET) {
+        throw new Error("SESSION_SECRET is not defined");
+      }
 
       const sessionStorage = createCookieSessionStorage({
         cookie: {
@@ -59,8 +58,7 @@ app.use(
           httpOnly: true,
           path: "/",
           sameSite: "lax",
-          secrets: ["secret"],
-          // secrets: [process.env.SESSION_SECRET],
+          secrets: [process.env.SESSION_SECRET],
           secure: process.env.NODE_ENV === "production",
         },
       });

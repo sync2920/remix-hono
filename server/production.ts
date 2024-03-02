@@ -11,6 +11,7 @@ import { session } from "remix-hono/session";
 import { cache } from "server/middlewares";
 
 console.log(process.env);
+console.log(process.env.SESSION_SECRET);
 
 const app = new Hono();
 
